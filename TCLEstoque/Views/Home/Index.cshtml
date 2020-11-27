@@ -1,0 +1,22 @@
+﻿@model HomeViewModel
+
+@{
+    ViewData["Title"] = "Dashboard";
+}
+
+<!-- Custom Css -->
+<link href="~/theme/css/style.css" rel="stylesheet">
+
+<div class="row clearfix">
+    @foreach (var produto in Model.Produtos)
+    {
+        <partial name="_CardTask" for="@produto" />
+    }
+</div>
+<div class="row clearfix">
+    @foreach (var movimentacao in Model.Movimentacoes)
+    {
+        <partial name="_CardTaskMovimentacoes" for="@movimentacao" />
+    }
+</div>
+

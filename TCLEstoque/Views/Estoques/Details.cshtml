@@ -1,0 +1,55 @@
+﻿@model TCLEstoque.Models.Estoque
+
+@{
+    ViewData["Title"] = "Detalhes";
+}
+
+<h1>Detalhes</h1>
+
+<div>
+    <h4>Estoque</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Nome)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Nome)
+        </dd>
+    </dl>
+    <!--Exibe as os produtos do estoque -->
+    <div class="row">
+        <!--<dt>
+            @Html.DisplayNameFor(model => model.Movimentacao)
+        </dt>-->
+        <dd>
+            <table class="table">
+                <tr>
+                    <th>Produto</th>
+                    <th>Quantidade</th>
+                    <th>Preço em R$</th>
+                </tr>
+                @foreach (var item in Model.Movimentacao)
+                {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Produto.Nome)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Quantidade)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Produto.Preco)
+                </td>
+            </tr>
+                }
+            </table>
+        </dd>
+    </divclass="row">
+    <!-- fim -->
+
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Id">Editar</a> |
+    <a asp-action="Index">Voltar para lista</a>
+</div>

@@ -1,0 +1,183 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <title>@ViewData["Title"] - Controle de Estoque</title>
+
+    <!-- Favicon-->
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&subset=latin,cyrillic-ext" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" type="text/css">
+
+    <!-- Bootstrap Core Css
+    <link href="~/theme/plugins/bootstrap/css/bootstrap.css" rel="stylesheet">-->
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+
+    <!--<link rel="stylesheet" href="~/css/site.css" />-->
+    <!-- Waves Effect Css -->
+    <link href="~/theme/plugins/node-waves/waves.css" rel="stylesheet" />
+
+    <!-- Animation Css -->
+    <link href="~/theme/plugins/animate-css/animate.css" rel="stylesheet" />
+
+    <!-- Morris Chart Css-->
+    <link href="~/theme/plugins/morrisjs/morris.css" rel="stylesheet" />
+
+    <!-- Custom Css -->
+    <link href="~/theme/css/style.css" rel="stylesheet">
+
+    <!-- AdminBSB Themes. You can choose a theme from css/themes instead of get all themes -->
+    <link href="~/theme/css/themes/all-themes.css" rel="stylesheet" />
+</head>
+
+<body class="theme-deep-purple">
+    <!-- Page Loader -->
+    <div class="page-loader-wrapper">
+        <div class="loader">
+            <div class="preloader">
+                <div class="spinner-layer pl-red">
+                    <div class="circle-clipper left">
+                        <div class="circle"></div>
+                    </div>
+                    <div class="circle-clipper right">
+                        <div class="circle"></div>
+                    </div>
+                </div>
+            </div>
+            <p>Aguarde...</p>
+        </div>
+    </div>
+
+
+    <nav class="navbar">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a href="javascript:void(0);" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false"></a>
+                <a href="javascript:void(0);" class="bars"></a>
+                <a class="navbar-brand" href="#">CONTROLE DE ESTOQUE</a>
+            </div>
+        </div>
+    </nav>
+    <!-- #Top Bar -->
+    <section>
+        <!-- Left Sidebar -->
+        <aside id="leftsidebar" class="sidebar">
+            <!-- User Info -->
+            <div class="user-info">
+                <div class="image">
+                    <img src="~/theme/images/user.png" width="48" height="48" padding="10px" alt="User" />
+                </div>                
+                <i class="material-icons" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" style="color:white">keyboard_arrow_down</i>
+                <partial name="_LoginPartial" />                
+            </div>
+            <!-- #User Info -->
+            <!-- Menu -->
+            <div class="menu">
+                <ul class="list">
+                    <li class="header">MENU</li>
+                    <li class="active">
+                        <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">
+                            <i class="material-icons">home</i>
+                            <span>Home</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="nav-link text-dark" asp-area="" asp-controller="Estoques" asp-action="Index">
+                            <i class="material-icons">assignment</i>
+                            <span>Estoque</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="nav-link text-dark" asp-area="" asp-controller="Produtos" asp-action="Index">
+                            <i class="material-icons">layers</i>
+                            <span>Produto</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="nav-link text-dark" asp-area="" asp-controller="Movimentacoes" asp-action="Index">
+                            <i class="material-icons">close_fullscreen</i>
+                            <span>Movimentação</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <!-- #Menu -->
+            <!-- Footer -->
+            <div class="legal">
+                <span>
+                    <a href="https://www.linkedin.com/in/jefferson-magalhaes/">Desenvolvido por Jefferson Magalhães</a>
+                </span>
+            </div>
+            <!-- #Footer -->
+        </aside>
+        <!-- #END# Left Sidebar -->
+    </section>
+
+    <section class="content">
+        <div class="container-fluid">
+            <!--<div class="block-header">
+                <h2>SISTEMA DE ESTOQUE</h2>
+            </div>-->
+            <div class="container">
+                <main role="main" class="auto">
+                    @RenderBody()
+                </main>
+            </div>
+        </div>
+    </section>
+
+    <!-- Jquery Core Js
+    <script src="~/theme/plugins/jquery/jquery.min.js"></script>-->
+    <!-- Bootstrap Core Js-->
+    <script src="~/theme/plugins/bootstrap/js/bootstrap.js"></script>
+    <!-- Select Plugin Js
+    <script src="~/theme/plugins/bootstrap-select/js/bootstrap-select.js"></script>-->
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+    <!-- Slimscroll Plugin Js -->
+    <script src="~/theme/plugins/jquery-slimscroll/jquery.slimscroll.js"></script>
+
+    <!-- Waves Effect Plugin Js -->
+    <script src="~/theme/plugins/node-waves/waves.js"></script>
+
+    <!-- Jquery CountTo Plugin Js -->
+    <script src="~/theme/plugins/jquery-countto/jquery.countTo.js"></script>
+
+    <!-- Morris Plugin Js
+    <script src="~/theme/plugins/morrisjs/morris.js"></script>-->
+    <script src="~/theme/plugins/raphael/raphael.min.js"></script>
+
+    <!-- ChartJs -->
+    <script src="~/theme/plugins/chartjs/Chart.bundle.js"></script>
+
+    <!-- Flot Charts Plugin Js -->
+    <script src="~/theme/plugins/flot-charts/jquery.flot.js"></script>
+    <script src="~/theme/plugins/flot-charts/jquery.flot.resize.js"></script>
+    <script src="~/theme/plugins/flot-charts/jquery.flot.pie.js"></script>
+    <script src="~/theme/plugins/flot-charts/jquery.flot.categories.js"></script>
+    <script src="~/theme/plugins/flot-charts/jquery.flot.time.js"></script>
+
+    <!-- Sparkline Chart Plugin Js -->
+    <script src="~/theme/plugins/jquery-sparkline/jquery.sparkline.js"></script>
+
+    <!-- Custom Js -->
+    <script src="~/theme/js/admin.js"></script>
+    <script src="~/theme/js/pages/index.js"></script>
+
+    <!-- Demo Js -->
+    <script src="~/theme/js/demo.js"></script>
+    @RenderSection("Scripts", required: false)
+</body>
+
+</html>
+

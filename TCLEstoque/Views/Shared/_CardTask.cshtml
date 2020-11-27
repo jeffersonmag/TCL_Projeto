@@ -1,0 +1,20 @@
+﻿@model Produto
+
+@*
+    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
+*@
+
+<!-- Widgets -->
+<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+    <div class="info-box bg-cyan hover-expand-effect">
+        <div class="icon">
+            <i class="material-icons">devices_other</i>
+        </div>
+        <div class="content">
+            <div class="text">@Model.Nome</div>
+            <!--<div class="number count-to" data-from="0" data-show="@Model.Preco" data-speed="1000" data-fresh-interval="20"></div>-->
+        <span class="Count">R$ @Model.Preco</span>
+        </div>
+    </div>
+</div>
+<!-- #END# Widgets -->

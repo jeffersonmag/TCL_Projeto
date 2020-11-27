@@ -1,0 +1,39 @@
+﻿@model TCLEstoque.Models.Movimentacao
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Excluir</h1>
+
+<h3>Deseja mesmo excluir?</h3>
+<div>
+    <h4>Movimentação</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Quantidade)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Quantidade)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Estoque)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Estoque.Nome)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Produto)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Produto.Nome)
+        </dd>
+    </dl>
+
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="MovimentacaoID" />
+        <input type="submit" value="Excluir" class="btn btn-danger" /> |
+        <a asp-action="Index">Voltar</a>
+    </form>
+</div>

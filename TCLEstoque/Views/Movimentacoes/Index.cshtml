@@ -1,0 +1,48 @@
+﻿@model IEnumerable<TCLEstoque.Models.Movimentacao>
+
+@{
+    ViewData["Title"] = "Movimentação";
+}
+
+<h1>Movimentação de produtos</h1>
+
+<p>
+    <a asp-action="Create">Incluir Novo Produto no Estoque</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Quantidade)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Estoque)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Produto)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Quantidade)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Estoque.Nome)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Produto.Nome)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.MovimentacaoID">Editar</a> |
+                <a asp-action="Details" asp-route-id="@item.MovimentacaoID">Detalhes</a> |
+                <a asp-action="Delete" asp-route-id="@item.MovimentacaoID">Excluir</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
